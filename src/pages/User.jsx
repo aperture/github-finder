@@ -4,15 +4,19 @@ import { Link, useParams } from 'react-router-dom';
 import GithubContext from '../context/github/GithubContext';
 import Spinner from '../components/layout/Spinner';
 import RepoList from '../components/repos/RepoList';
+import { getUserAndRepos } from '../context/github/GithubActions';
 
 function User() {
-  const { getUser, user, loading, getUserRepos, repos } =
-    useContext(GithubContext);
-  const { username } = useParams();
+  const { user, loading, repos, dispatch } = useContext(GithubContext);
+  const params = useParams();
   useEffect(() => {
-    getUser(username);
-    getUserRepos(username);
-  }, []);
+    dispatch({ type: 'SET_LOADING' });
+    const getUserData = async () => {
+      const userData = await getUserAndRepos(params.username);
+      dispatch({ type: 'GET_USER_AND_REPOS', payload: userData });
+    };
+    getUserData();
+  }, [dispatch, params.login]);
   const {
     name,
     type,

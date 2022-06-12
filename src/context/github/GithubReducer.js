@@ -1,5 +1,4 @@
 const githubReduder = (state, action) => {
-  console.log(state, action);
   switch (action.type) {
     case 'GET_USERS':
       return {
@@ -28,6 +27,12 @@ const githubReduder = (state, action) => {
         ...state,
         repos: action.payload,
         loading: false,
+      };
+    case 'GET_USER_AND_REPOS':
+      return {
+        ...state,
+        repos: action.payload.repos,
+        user: action.payload.user,
       };
     default:
       return state;
