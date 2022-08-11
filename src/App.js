@@ -8,6 +8,7 @@ import { GithubProvider } from './context/github/GithubContext';
 import About from './pages/About';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Terminal from './pages/Terminal';
 import User from './pages/User';
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/user/:username' element={<User />} />
-                <Route path='/notfound' element={<NotFound />} />
+                <Route path='/user/:username' element={<Terminal/>}/>
+                <Route path='/notfound' element={<NotFound />}/>
                 <Route path='*' element={<NotFound />} />
               </Routes>
             </main>

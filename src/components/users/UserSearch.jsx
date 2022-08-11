@@ -47,7 +47,7 @@ function UserSearch() {
         {users.length > 0 && (
           <div>
             <button
-              className='btn-ghost btn-lrg'
+              className='btn-secondary btn-lrg'
               onClick={() => dispatch({ type: 'CLEAR_USERS' })}
             >
               Clear
