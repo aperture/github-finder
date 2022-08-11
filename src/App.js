@@ -24,7 +24,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/user/:username' element={<User />} />
-                <Route path='/user/:username' element={<Terminal/>}/>
+                <Route path='/terminal' element={<Terminal/>}/>
                 <Route path='/notfound' element={<NotFound />}/>
                 <Route path='*' element={<NotFound />} />
               </Routes>
