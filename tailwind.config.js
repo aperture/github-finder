@@ -7,7 +7,7 @@ module.exports = {
   plugins: [require('daisyui')],
   daisyui: {
     styled: true,
-    themes: ['cmyk'],
+    themes: ['retro'],
     base: true,
     utils: true,
     logs: true,
